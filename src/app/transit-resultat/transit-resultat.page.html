@@ -1,9 +1,48 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>transit_resultat</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-list style="height: 85px" lines="full">
+  <ion-item>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/transit"></ion-back-button>
+      </ion-buttons>
+      <ion-title style="font-weight: bold; text-align: center"
+        >Transit - Résultats</ion-title
+      >
+      <ion-img
+        slot="end"
+        src="../../assets/img/logo.png"
+        class="image"
+      ></ion-img>
+    </ion-toolbar>
+  </ion-item>
+</ion-list>
 
 <ion-content>
+  <p class="titre">Voyages diponibles</p>
+  <p
+    style="
+      border-bottom: 2px solid #0275d8;
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-top: 50px;
+    "
+  ></p>
+  <div *ngFor="let r of resultats">
+    <ion-card style="margin-left: 40px; margin-right: 40px; padding: 20px">
+      <!--
+    <p class="texte">{{r.depart.nom}}</p>
+    <p>{{r.arrive.nom}}</p>
+    <p>{{r.heureDepart}}</p>
+    <p>{{r.heureArrive}}</p>
+    <p>{{r.transport}}</p>
+    <p>{{r.price}}</p>   
+    -->
+      <p class="texte">
+        <ion-icon name="locate-outline"></ion-icon>
+        {{r}}
+      </p>
 
+      <br />
+    </ion-card>
+    <ion-icon name="arrow-down" style="margin-left: 40%"></ion-icon>
+  </div>
 </ion-content>

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { NavController } from "@ionic/angular";
 import { Station } from "../Model/Station";
 import { DetailService } from "../services/detail.service";
+import { TransitService } from "../services/transit.service";
 
 @Component({
   selector: "app-transit",
@@ -16,7 +17,8 @@ export class TransitPage implements OnInit {
   constructor(
     public nav: NavController,
     public DetServ: DetailService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private transitService: TransitService
   ) {}
 
   ngOnInit() {
@@ -42,5 +44,13 @@ export class TransitPage implements OnInit {
     );
   }
 
-  Onsubmit() {}
+  Onsubmit() {
+    let result = [this.VoyageForm.value.depart];
+    result = result.concat(
+      this.transitService.getTransits(this.VoyageForm.value)
+    );
+    result.push(this.VoyageForm.value.arrive);
+    this.transitService.storeResults(result);
+    this.nav.navigateForward("/transit-resultat");
+  }
 }

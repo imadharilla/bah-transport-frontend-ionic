@@ -51,7 +51,7 @@
       <ion-item>
         <ion-label>Station de départ</ion-label>
         <ion-select formControlName="depart">
-          <ion-select-option *ngFor="let s of stations" [value]="s._id"
+          <ion-select-option *ngFor="let s of stations" [value]="s.nom"
             >{{s.nom}}</ion-select-option
           >
         </ion-select>
@@ -67,7 +67,7 @@
       <ion-item>
         <ion-label>Station d'arriver</ion-label>
         <ion-select formControlName="arrive">
-          <ion-select-option *ngFor="let s of stations" [value]="s._id"
+          <ion-select-option *ngFor="let s of stations" [value]="s.nom"
             >{{s.nom}}</ion-select-option
           >
         </ion-select>
