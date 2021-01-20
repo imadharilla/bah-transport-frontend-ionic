@@ -1,0 +1,72 @@
+<ion-list style="height: 85px" lines="full">
+  <ion-item>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title style="font-weight: bold; text-align: center;">VoyageInfos - Horaires</ion-title>
+      <ion-img slot="end" src="../../assets/img/logo.png" class="image"></ion-img>
+    </ion-toolbar>
+  </ion-item>
+
+</ion-list>
+
+<ion-content>
+  <p class="titre">Chercher votre voyage</p>
+  <p style="border-bottom: 2px solid #0275d8; margin-left: 40px; margin-right: 40px; margin-top: 50px;"></p>
+  <form [formGroup]="VoyageForm" (ngSubmit)="Onsubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-label>Transport préféré</ion-label>
+        <ion-select formControlName="transport">
+          <ion-select-option value="Tram">Tram</ion-select-option>
+          <ion-select-option value="Bus">Bus</ion-select-option>
+          <ion-select-option value="Taxi">Taxi</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-card-subtitle style="margin-left: 10px; margin-right: 10px; padding-top: 6px;"><ion-icon name="alert-circle-outline"></ion-icon> Choisissez votre moyen de transport.</ion-card-subtitle>
+    <br/>
+    <ion-list>
+      <ion-item>
+        <ion-label>Station de départ</ion-label>
+        <ion-select  formControlName="depart">
+          <ion-select-option *ngFor="let s of stations" [value]="s._id">{{s.nom}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-card-subtitle style="margin-left: 10px; margin-right: 10px; padding-top: 6px;"><ion-icon name="alert-circle-outline"></ion-icon> Choisisssez votre station de départ.</ion-card-subtitle>
+    <br/>
+    <ion-list>
+      <ion-item>
+        <ion-label>Station d'arriver</ion-label>
+        <ion-select formControlName="arrive">
+          <ion-select-option *ngFor="let s of stations" [value]="s._id">{{s.nom}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-card-subtitle style="margin-left: 10px; margin-right: 10px; padding-top: 6px;"><ion-icon name="alert-circle-outline"></ion-icon> Choisissez votre station d'arrivée.</ion-card-subtitle>
+    <br/>
+    <ion-item>
+      <ion-label>Heure de départ</ion-label>
+      <ion-input formControlName="heureDepart" placeholder="00:00" ></ion-input>
+    </ion-item>
+    <ion-card-subtitle style="margin-left: 10px; margin-right: 10px; padding-top: 6px;"><ion-icon name="alert-circle-outline"></ion-icon> Saisissez votre horaire.</ion-card-subtitle>
+    <ion-item>
+      <ion-label>Prix min (Dhs)</ion-label>
+      <ion-input formControlName="prixMin" placeholder="0" ></ion-input>
+    </ion-item>
+    <ion-card-subtitle style="margin-left: 10px; margin-right: 10px; padding-top: 6px;"><ion-icon name="alert-circle-outline"></ion-icon> Saisissez votre prix min</ion-card-subtitle>
+    <br/>
+    <ion-item>
+      <ion-label>Prix max (Dhs)</ion-label>
+      <ion-input formControlName="prixMax" placeholder="100" ></ion-input>
+    </ion-item>
+    <ion-card-subtitle style="margin-left: 10px; margin-right: 10px; padding-top: 6px;"><ion-icon name="alert-circle-outline"></ion-icon> Saisissez votre prix max</ion-card-subtitle>
+    <br/>
+    <p style="border-bottom: 2px solid #0275d8; margin-left: 40px; margin-right: 40px; margin-bottom: 20px;"></p>
+    <ion-button [disabled]="VoyageForm.invalid" expand="block" style="margin-left: 40px; margin-right: 40px;" type="submit" color="primary" >Chercher</ion-button>
+  </form>
+
+
+</ion-content>

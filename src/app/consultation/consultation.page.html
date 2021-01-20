@@ -1,0 +1,41 @@
+<ion-list style="height: 85px" lines="full">
+  <ion-item>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/accueil"></ion-back-button>
+      </ion-buttons>
+      <ion-title style="font-weight: bold; text-align: center"
+        >Consultation</ion-title
+      >
+      <ion-img
+        slot="end"
+        src="../../assets/img/logo.png"
+        class="image"
+      ></ion-img>
+    </ion-toolbar>
+  </ion-item>
+</ion-list>
+
+<ion-content>
+  <p class="titre">Consulter les voyages!</p>
+  <p
+    style="
+      border-bottom: 2px solid #0275d8;
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-top: 50px;
+    "
+  ></p>
+  <br />
+  <ion-button expand="block" routerLink="/transit" color="secondary">
+    les stations de transit
+  </ion-button>
+  <br />
+  <ion-button expand="block" color="secondary">
+    le chemin le plus court
+  </ion-button>
+  <br />
+  <ion-button expand="block" color="secondary">
+    le moyen de transport le plus adéquat
+  </ion-button>
+</ion-content>

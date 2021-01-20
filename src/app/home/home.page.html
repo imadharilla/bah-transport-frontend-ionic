@@ -1,20 +1,26 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="ion-padding ion-text-center">
+    <ion-list lines="full">
+        <ion-item>
+            <ion-icon *ngIf="mode==1" slot="start" icon="moon"></ion-icon>
+            <ion-icon *ngIf="mode==0" slot="start" icon="sunny"></ion-icon>
+            <ion-card-title style="font-weight: bold;" slot="end" *ngIf="mode==1">Sombre</ion-card-title>
+            <ion-card-title style="font-weight: bold;" slot="end" *ngIf="mode==0">Clair</ion-card-title>
+            <ion-toggle slot="end" (ionChange)="changeTheme($event)"></ion-toggle>
+        </ion-item>
+    </ion-list>
+    <ion-content>
+        <ion-card-content>
+            <ion-card-title class="titre">VoyageInfos</ion-card-title>
+            <br/>
+            <ion-img src="../../assets/img/logo.png" class="image"></ion-img>
+            <br/>
+            <ion-card-subtitle class="texte">Trouvez votre voyage rapidement avec VoyageInfos.</ion-card-subtitle>
+            <br/>
+            <ion-button expand="block" (click)="start()" class="texte">Commencer</ion-button>
+        </ion-card-content>
+    </ion-content>
 </ion-content>

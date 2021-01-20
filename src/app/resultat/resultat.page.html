@@ -1,0 +1,33 @@
+<ion-list style="height: 85px" lines="full">
+  <ion-item>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title style="font-weight: bold; text-align: center;">VoyageInfos - Résultats</ion-title>
+      <ion-img slot="end" src="../../assets/img/logo.png" class="image"></ion-img>
+    </ion-toolbar>
+  </ion-item>
+
+</ion-list>
+
+<ion-content>
+  <p class="titre">Voyages diponibles</p>
+  <p style="border-bottom: 2px solid #0275d8; margin-left: 40px; margin-right: 40px; margin-top: 50px;"></p>
+  <ion-card style="margin-left: 40px; margin-right: 40px; padding: 20px;" *ngFor="let r of resultats">
+    <!--
+    <p class="texte">{{r.depart.nom}}</p>
+    <p>{{r.arrive.nom}}</p>
+    <p>{{r.heureDepart}}</p>
+    <p>{{r.heureArrive}}</p>
+    <p>{{r.transport}}</p>
+    <p>{{r.price}}</p>   
+    --> 
+    <p class="texte"><ion-icon name="locate-outline"></ion-icon> Station de départ : {{r.depart.nom}}</p>
+    <p class="texte"><ion-icon name="map-outline"></ion-icon> Station d'arrivée : {{r.arrive.nom}}</p>
+    <p class="texte"><ion-icon name="time-outline"></ion-icon> Heure de départ : {{r.heureDepart}} h</p>
+    <p class="texte"><ion-icon name="time-outline"></ion-icon> Heure d'arrivée : {{r.heureArrive}} h</p>
+    <p class="texte"><ion-icon name="paper-plane-outline"></ion-icon> Moyen de transport : {{r.transport}}</p>
+    <p class="texte"><ion-icon name="cash-outline"></ion-icon> Tarif : {{r.price}} Dhs</p>  
+  </ion-card>
+</ion-content>

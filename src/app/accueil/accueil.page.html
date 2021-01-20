@@ -1,0 +1,73 @@
+<ion-list style="height: 85px" lines="full">
+    <ion-item>
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <ion-back-button defaultHref="/"></ion-back-button>
+            </ion-buttons>
+            <ion-title style="font-weight: bold; text-align: center;">VoyageInfos</ion-title>
+            <ion-img slot="end" src="../../assets/img/logo.png" class="image"></ion-img>
+        </ion-toolbar>
+    </ion-item>
+
+</ion-list>
+
+<ion-content>
+    <p class="titre">Veuillez glisser pour continuer</p>
+    <p style="border-bottom: 2px solid #0275d8; margin-left: 40px; margin-right: 40px;"></p>
+    <form [formGroup]="UserForm" (ngSubmit)="Onsubmit()">
+        <ion-slides pager="true" [options]="slideOpt">
+            <ion-slide> <ion-radio-group formControlName="handicap">
+                <ion-list-header style="text-align: center;">
+                    <ion-label class="texte"><strong>Handicap</strong></ion-label>
+                </ion-list-header>
+                <ion-item lines="none">
+                    <ion-label>Oui</ion-label>
+                    <ion-radio slot="start" color="success" value="oui"></ion-radio>
+                </ion-item>
+                <ion-item >
+                    <ion-label>Non</ion-label>
+                    <ion-radio slot="start" color="tertiary" value="non"></ion-radio>
+                </ion-item>
+            </ion-radio-group></ion-slide>
+            <ion-slide>
+                <ion-radio-group formControlName="genre">
+                <ion-list-header style="text-align: center;">
+                    <ion-label class="texte"><strong>Genre</strong></ion-label>
+                </ion-list-header>
+                <ion-item lines="none">
+                    <ion-label>F</ion-label>
+                    <ion-radio slot="start" color="success" value="F"></ion-radio>
+                </ion-item>
+
+                <ion-item >
+                    <ion-label>M</ion-label>
+                    <ion-radio slot="start" color="tertiary" value="M"></ion-radio>
+                </ion-item>
+            </ion-radio-group>
+            </ion-slide>
+            <ion-slide>
+                <ion-item>
+                    <ion-input formControlName="age" type="number" placeholder="Saisissez votre âge"></ion-input>
+                </ion-item>
+            </ion-slide>
+            <ion-slide>
+                <ion-list>
+                <ion-item>
+                    <ion-label>Transport de préférence</ion-label>
+                    <ion-select formControlName="transport" >
+                        <ion-select-option value="Tram">Tram</ion-select-option>
+                        <ion-select-option value="Bus">Bus</ion-select-option>
+                        <ion-select-option value="Bus">Taxi</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item lines="none" style="margin-top: 10px">
+                 </ion-item>
+                </ion-list>
+            </ion-slide>
+
+        </ion-slides>
+        <p style="border-bottom: 2px solid #0275d8; margin-left: 40px; margin-right: 40px;"></p>
+        <ion-button expand="block" style="margin-left: 40px; margin-right: 40px;" [disabled]="UserForm.invalid" color="primary" type="submit">Valider</ion-button>
+
+    </form>
+</ion-content>

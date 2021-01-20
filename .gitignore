@@ -1,31 +1,106 @@
-# Specifies intentionally untracked files to ignore when using Git
-# http://git-scm.com/docs/gitignore
+# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
 
+# Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,angular,ionic3
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,angular,ionic3
+
+### Angular ###
+## Angular ##
+# compiled output
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
+
+# dependencies
+node_modules/
+bower_components/
+
+# IDEs and editors
+.idea/
+
+# misc
+.sass-cache/
+connect.lock/
+coverage/
+libpeerconnection.log/
+npm-debug.log
+testem.log
+typings/
+
+# e2e
+e2e/*.js
+e2e/*.map
+
+# System Files
+.DS_Store/
+
+### Ionic3 ###
+# Log an tmp data
 *~
 *.sw[mnpcod]
-.tmp
+*.log
 *.tmp
 *.tmp.*
-*.sublime-project
-*.sublime-workspace
+log.txt
+
+# NPM (Node Package Manager) files
+npm-debug.log*
+temp/
+
+# Preprocessors cache files
+.sourcemaps/
+.tmp/
+hooks/
+
+# Ionic 3 plugins files
+platforms/
+plugins/
+plugins/android.json
+plugins/ios.json
+www/
+
+# Trash data
+$RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
-$RECYCLE.BIN/
 
-*.log
-log.txt
-npm-debug.log*
+### VisualStudioCode ###
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
 
-/.idea
-/.ionic
-/.sass-cache
-/.sourcemaps
-/.versions
-/.vscode
-/coverage
-/dist
-/node_modules
-/platforms
-/plugins
-/www
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,angular,ionic3
+
+# Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
+

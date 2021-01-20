@@ -1,18 +1,20 @@
+ion-input {
+  display: inline-block;
+  width:49% ;
+}
+.image {
+  width: 50px;
+  margin-left: 0px;
+}
 .titre {
   font-family: 'Rouge Script', cursive;
   font-size: 40px; font-weight: normal;
-  line-height: 48px; text-align: center;
+  line-height: 28px; text-align: center;
   text-shadow: 1px 1px 2px #082b34;
 }
 .texte {
   font-family: 'Julius Sans One', sans-serif;
-  font-size: 18px;
+  font-size: 28px;
   font-weight: bold;
   line-height: 32px;
-}
-.image {
-  width: 240px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
